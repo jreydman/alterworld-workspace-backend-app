@@ -1,23 +1,25 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext", // Bundler for frontend
+
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true,
+    "incremental": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
     "experimentalDecorators": true,
-    "target": "es6",
+    "emitDecoratorMetadata": true,
+    "declaration": true,
     "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./src"
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+    "strict": true,
+
+    "baseUrl": ".",
+    "outDir": "dist",
+    "rootDir": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
 }

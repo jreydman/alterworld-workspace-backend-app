@@ -1,10 +1,25 @@
+import AppModule from "@/src/modules/app/app.module";
+import { NestFactory } from "@nestjs/core";
+import {
+	FastifyAdapter,
+	type NestFastifyApplication,
+} from "@nestjs/platform-fastify";
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  setupSwagger(app);
-  app.enableCors();
-  app.useGlobalPipes(new TrimStringsPipe(), new ValidationPipe());
-  useContainer(app.select(AppModule), { fallbackOnErrors: true });
-  await app.listen(3000);
+enum APP_PROPERTIES {
+	HOST = "localhost",
+	PORT = 3001,
+	GLOBAL_PREFIX = "api",
 }
-bootstrap();
+
+export async function bootstrap() {
+	const app = await NestFactory.create<NestFastifyApplication>(
+		AppModule,
+		new FastifyAdapter(),
+	);
+
+	await app.listen(APP_PROPERTIES.PORT, APP_PROPERTIES.HOST);
+
+	return app;
+}
+
+if (!process.env.HMR) bootstrap();
