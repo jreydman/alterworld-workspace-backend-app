@@ -1,22 +1,10 @@
-import {
-	type MiddlewareConsumer,
-	Module,
-	type NestModule,
-	type OnModuleInit,
-} from "@nestjs/common";
-import SwaggerModule from "@/src/modules/swagger/swagger.module";
+import { Module } from '@nestjs/common';
+import HealthModule from '../health/health.module';
 
 @Module({
-	imports: [SwaggerModule],
+	imports: [HealthModule],
 	controllers: [],
 	providers: [],
 	exports: [],
 })
-export default class AppModule implements NestModule, OnModuleInit {
-	constructor(private readonly customSwaggerService: Sw) {}
-
-	onModuleInit() {
-		throw new Error("Method not implemented.");
-	}
-	configure(consumer: MiddlewareConsumer) {}
-}
+export default class AppModule {}

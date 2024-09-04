@@ -1,25 +1,25 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext", // Bundler for frontend
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext", // Bundler for frontend
 
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "incremental": true,
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "declaration": true,
-    "sourceMap": true,
-    "strict": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"incremental": true,
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		// "declaration": true,
+		"sourceMap": true,
+		"strict": true,
 
-    "baseUrl": ".",
-    "outDir": "dist",
-    "rootDir": ".",
-    "paths": {
-      "@/*": ["./*"]
-    }
-  }
+		"baseUrl": ".",
+		"outDir": "dist",
+		"rootDir": ".",
+		"paths": {
+			"@/*": ["./*"]
+		}
+	}
 }
